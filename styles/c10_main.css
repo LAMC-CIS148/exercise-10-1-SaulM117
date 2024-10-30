@@ -64,14 +64,21 @@ header img {
 }
 
 #nav_menu ul {
+    display: grid; /* Set the display to grid */
+    grid-template-columns: repeat(5, 1fr); /* Five columns, each 1/5 of the width */
+    grid-auto-rows: auto; /* Rows sized automatically */
+    align-items: center; /* Center items vertically within the grid */
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
+#nav_menu ul li {
+    text-align: center; /* Center text within each li */
+}
+
 #nav_menu ul li a {
     display: block;
-    text-align: center;
     padding: 1em 0;
     text-decoration: none;
     background-color: #800000;
