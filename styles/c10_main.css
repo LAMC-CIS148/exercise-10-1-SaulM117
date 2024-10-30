@@ -92,9 +92,24 @@ header img {
 
 /* the styles for the main section */
 main {
-    grid-area: main; /* Assign main to grid area */
+    display: grid; /* Set the display to grid */
+    grid-template-columns: 30% 1fr; /* First column 30%, second column takes the rest */
+    grid-auto-rows: auto; /* Rows sized automatically */
+    column-gap: 2.5%; /* Column gap of 2.5% */
+    grid-template-areas: "section aside"; /* Define grid areas */
 }
 
+section {
+    grid-area: section; /* Assign section to grid area */
+    padding: 0 2.5% 20px 0; /* Adjust padding as needed */
+}
+
+aside {
+    grid-area: aside; /* Assign aside to grid area */
+    padding: 0 0 20px 2.5%; /* Keep the existing padding */
+}
+
+/* the styles for the section */
 section {
     padding: 0 2.5% 20px 2.5%;
 }
