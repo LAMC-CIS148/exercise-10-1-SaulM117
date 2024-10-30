@@ -34,7 +34,7 @@ a:focus, a:hover {
 /* the styles for the header */
 header {
     grid-area: header; /* Assign header to grid area */
-    padding: 1.5em 0 2em 0;
+    padding: 40px 0; /* Top and bottom padding set to 40px (half of 80px) */
     border-bottom: 3px solid #931420;
     background-image: linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 }
@@ -101,17 +101,17 @@ main {
 
 section {
     grid-area: section; /* Assign section to grid area */
-    padding: 0 2.5% 20px 0; /* Adjust padding as needed */
+    padding: 0 2.5% 20px 0; /* Right padding for section */
 }
 
 aside {
     grid-area: aside; /* Assign aside to grid area */
-    padding: 0 0 20px 2.5%; /* Keep the existing padding */
+    padding: 0 0 20px 20px; /* Left padding based on width of aside */
 }
 
 /* the styles for the section */
 section {
-    padding: 0 2.5% 20px 2.5%;
+    padding: 0 2.5% 20px 0; /* Right padding adjusted, left padding set to 0 */
 }
 
 section h1 {
@@ -170,7 +170,7 @@ article img {
 
 /* the styles for the aside */
 aside {
-    padding: 0 0 20px 2.5%;
+    padding: 0 0 20px 20px; /* Adjust left padding for aside */
 }
 
 aside h2 {
