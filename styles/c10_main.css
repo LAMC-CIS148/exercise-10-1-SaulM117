@@ -60,23 +60,32 @@ header img {
 }
 
 #nav_menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr); /* Five columns, each occupying 1/5 of the width */
+    grid-template-rows: auto; /* One row sized automatically */
+    align-items: center; /* Center items vertically within the grid */
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+#nav_menu ul li {
+    display: flex; /* Use flex to center the content */
+    justify-content: center; /* Center content horizontally */
 }
 
 #nav_menu ul li a {
-    display: block;
-    text-align: center;
-    padding: 1em 0;
-    text-decoration: none;
-    background-color: #800000;
-    color: white;
-    font-weight: bold;
+    display: block; /* Ensure links occupy the full cell */
+    padding: 1em 0; /* Vertical padding */
+    text-decoration: none; /* Remove underline */
+    background-color: #800000; /* Background color */
+    color: white; /* Text color */
+    font-weight: bold; /* Font weight */
+    text-align: center; /* Center text */
 }
 
 #nav_menu a.current {
-    color: yellow;
+    color: yellow; /* Highlight current link */
 }
 
 /* Main content styles */
