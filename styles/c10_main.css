@@ -23,6 +23,7 @@ body {
 /* Assign grid areas to each element */
 header {
     grid-area: header;
+    padding: 80px 0; /* Set top and bottom padding to 80px */
 }
 
 #nav_menu {
@@ -39,33 +40,12 @@ main {
 
 section {
     grid-area: content; /* Assign area for the section */
+    padding: 0 20px 20px 0; /* Set right padding to 20px, left padding to 0 */
 }
 
 aside {
     grid-area: aside; /* Assign area for the aside */
-}
-
-/* the styles for the header */
-header {
-    padding: 1.5em 0 2em 0;
-    border-bottom: 3px solid #931420;
-    background-image: linear-gradient(
-        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-}
-header h2 {
-    font-size: 175%;
-    color: #800000;
-}
-header h3 {
-    font-size: 130%;
-    font-style: italic;
-}
-header img {
-    float: left;
-    padding: 0 3.75%;
-}
-.shadow {
-    text-shadow: 2px 2px 2px #800000;
+    padding: 0 0 20px 20px; /* Set left padding to 20px */
 }
 
 /* the styles for the navigation menu */
@@ -92,7 +72,7 @@ header img {
 
 /* the styles for the section */
 section {
-    padding: 0 2.5% 20px 2.5%;
+    padding: 0 20px 20px 0; /* Set right padding to 20px, left padding to 0 */
 }
 section h1 {
     font-size: 150%;
@@ -142,7 +122,7 @@ article img {
 
 /* the styles for the aside */
 aside {
-    padding: 0 0 20px 2.5%;
+    padding: 0 0 20px 20px; /* Set left padding to 20px */
 }
 aside h2 {
     color: #800000;
