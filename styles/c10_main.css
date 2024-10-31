@@ -170,7 +170,7 @@ article img {
 
 /* the styles for the aside */
 aside {
-    padding: 0 0 20px 20px; /* Adjust left padding for aside */
+    padding: 0 2.5% 20px 2.5%; /* Adjust left and right padding for aside */
 }
 
 aside h2 {
@@ -204,48 +204,36 @@ footer p {
     display: none;
 }
 
-@media only screen and (max-width: 734px) {
-    section h1 {
-        font-size: 125%;
-    }
-    section h2, aside h2 {
-        font-size: 110%;
-    }
-    aside h3 a {
-        font-size: 85%;
-    }
-}
-
 @media only screen and (max-width: 648px) {
-    header img {
-        float: none;
-    }
     header {
-        text-align: center;
+        display: grid; /* Set the header to a grid */
+        grid-template-rows: auto auto auto; /* Three rows, auto height for each */
+        gap: 0.5em; /* Grid gap of 0.5em */
+        padding: 20px 0; /* Adjust top and bottom padding */
     }
-    section {
-        float: none;
-        width: 95%;
-    }
-    aside {
-        float: none;
-        padding-right: 2.5%;
-        width: 95%;
-    }
-    article img {
-        max-width: 30%;
-    }
-    #speakers {
-        column-count: 2;
-    }
+
     #nav_menu {
-        display: none;
+        display: none; /* Hide the original nav menu */
     }
+    
     #mobile_menu {
-        display: block;
+        display: block; /* Show mobile menu */
+        grid-area: nav; /* Place mobile menu in nav area */
     }
-    .slicknav_menu {
-        background-color: #800000 !important;
+
+    main {
+        grid-template-rows: auto auto; /* Two rows, auto height for each */
+        grid-template-areas: 
+            "section"
+            "aside"; /* Redefine grid areas for section and aside */
+    }
+
+    section {
+        padding: 0 2.5%; /* Set left and right margins for section */
+    }
+
+    aside {
+        padding: 0 2.5%; /* Set left and right padding for aside */
     }
 }
 
