@@ -1,215 +1,112 @@
-/* Reset and basic styles */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-html {
-	background-color: white;
-}
+/* styles/c10_main.css */
+
+/* Base styles for the body */
 body {
-	display: grid;
-	grid-template-areas: 
-		"header"
-		"nav"
-		"main"
-		"footer";
-	grid-template-rows: auto auto 1fr auto; /* All rows sized automatically */
-	width: 98%;
-	max-width: 960px;
-	margin: 0 auto;
-	border: 3px solid #931420;
-	background-color: #fffded;
+    display: grid; /* Grid layout for the entire body */
+    grid-template-rows: 80px auto auto auto; /* Four rows for header, main, and footer */
+    grid-gap: 0; /* No gaps */
 }
 
 /* Header styles */
 header {
-	grid-area: header;
-	padding: 0; /* Adjust padding as needed */
-	border-bottom: 3px solid #931420;
-	background-image: linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-}
-header h2 {
-	font-size: 175%;
-	color: #800000;
-}
-header h3 {
-	font-size: 130%;
-	font-style: italic;
-}
-header img {
-	float: left;
-	padding: 0 3.75%;
-}
-.shadow {
-	text-shadow: 2px 2px 2px #800000;
+    padding: 80px 0; /* Top and bottom padding for header */
+    background-color: #f8f9fa; /* Optional: Header background color */
 }
 
 /* Navigation styles */
 #nav_menu {
-	grid-area: nav;
+    display: grid; /* Set display to grid */
+    grid-template-columns: repeat(5, 1fr); /* Five columns */
+    align-items: center; /* Center items vertically */
+    background-color: #e9ecef; /* Optional: Background color for nav */
+    padding: 10px 0; /* Optional: Padding for nav */
 }
+
+/* Style for the ul element in the navigation */
 #nav_menu ul {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	align-items: center; /* Center items vertically */
+    list-style: none; /* Remove default list styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: contents; /* Allow children to inherit grid properties */
 }
-#nav_menu ul li {
-	display: grid;
+
+/* Style for the li elements */
+#nav_menu li {
+    text-align: center; /* Center text within each li */
 }
-#nav_menu ul li a {
-	text-align: center;
-	padding: 1em 0;
-	text-decoration: none;
-	background-color: #800000;
-	color: white;
-	font-weight: bold;
+
+/* Style for links in the navigation */
+#nav_menu a {
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px; /* Add padding around links */
+    color: #333; /* Link color */
 }
+
+/* Optional: Style for the active/current link */
 #nav_menu a.current {
-	color: yellow;
+    font-weight: bold; /* Highlight current page */
+    color: #007bff; /* Change color for active link */
 }
 
-/* Main styles */
+/* Main element styles */
 main {
-	display: grid;
-	grid-template-areas: 
-		"section aside"; 
-	grid-template-columns: 30% 1fr; /* 30% for section, rest for aside */
-	grid-gap: 2.5%;
-	grid-row: 3;
+    display: grid; /* Set display to grid */
+    grid-template-columns: 30% 1fr; /* First column 30%, second column takes the rest */
+    grid-gap: 2.5%; /* Set gap between columns */
 }
+
+/* Assign grid areas for section and aside */
 section {
-	grid-area: section;
-	padding: 0 2.5% 20px 0; /* Adjusting padding */
-}
-section h1 {
-	font-size: 150%;
-	padding: .5em 0 .25em 0;
-}
-section h2 {
-	color: #800000;
-	font-size: 130%;
-	padding: .5em 0 .25em 0;
-}
-section p {
-	padding-bottom: .5em;
-}
-section blockquote {
-	padding: 0 2em;
-	font-style: italic;
-}
-section ul {
-	padding: 0 0 .25em 1.25em;
-	list-style-type: circle;
-}
-section li {
-	padding-bottom: .35em;
+    grid-area: 1 / 1; /* First row */
+    padding: 0 20px; /* Right padding set to 20px */
+    margin: 0 2.5%; /* Set left and right margins to 2.5% */
 }
 
-/* Article styles */
-article {
-	padding: .5em 0;
-	border-top: 2px solid #800000;
-	border-bottom: 2px solid #800000;
-}
-article h2 {
-	padding-top: 0;
-}
-article h3 {
-	font-size: 105%;
-	padding-bottom: .25em;
-}
-article img {
-	float: right;
-	max-width: 40%;
-	min-width: 150px;
-	margin: .5em 0 1em 1em;
-	border: 1px solid black;
-}
-
-/* Aside styles */
 aside {
-	grid-area: aside;
-	padding-left: 2.5%;
-}
-aside h2 {
-	color: #800000;
-	font-size: 130%;
-	padding: .5em 0 .25em 0;
-}
-aside h3 {
-	font-size: 105%;
-	padding-bottom: .25em;
-}
-aside img {
-	padding-bottom: 1em;
+    grid-area: 1 / 2; /* Second row */
+    padding: 2.5%; /* Set left and right padding */
 }
 
 /* Footer styles */
 footer {
-	grid-area: footer;
-	background-color: #931420;
-}
-footer p {
-	text-align: center;
-	color: white;
-	padding: 1em 0;
+    padding: 20px; /* Optional: Footer padding */
+    text-align: center; /* Center text in footer */
+    background-color: #f8f9fa; /* Optional: Footer background color */
 }
 
-/* Mobile menu */
-#mobile_menu {
-	display: none;
-}
+/* Media query for viewports 648 pixels or less */
+@media (max-width: 648px) {
+    header {
+        display: grid; /* Set display to grid */
+        grid-template-rows: auto auto auto; /* Three rows */
+        grid-gap: 0.5em; /* Grid gap of 0.5 ems */
+        padding: 20px 0; /* Adjust top and bottom padding */
+    }
 
-/* Media Queries */
-@media only screen and (max-width: 734px) {
-	section h1 {
-		font-size: 125%;
-	}
-	section h2, aside h2 {
-		font-size: 110%;
-	}
-	aside h3 a {
-		font-size: 85%;
-	}
-}
+    /* Mobile menu in the grid area for the navigation */
+    #mobile_menu {
+        grid-area: 2; /* Place mobile menu in the second row */
+    }
 
-@media only screen and (max-width: 648px) {
-	header {
-		display: grid;
-		grid-template-rows: auto auto auto; /* Three rows */
-		gap: 0.5em;
-		text-align: center;
-	}
-	header img {
-		float: none;
-	}
-	#nav_menu {
-		display: none;
-	}
-	#mobile_menu {
-		display: block;
-	}
-	#mobile_menu {
-		background-color: #800000 !important;
-	}
-	main {
-		grid-template-areas: 
-			"section"
-			"aside"; 
-		grid-template-rows: auto auto; /* Two rows */
-	}
-	section {
-		padding: 0 2.5% 20px 0; /* Adjusting padding */
-	}
-	aside {
-		padding: 0 2.5%;
-	}
-}
+    #nav_menu {
+        display: none; /* Hide desktop nav menu */
+    }
 
-@media only screen and (max-width: 414px) {
-	body { font-size: 90%; }
+    main {
+        display: grid; /* Set display to grid */
+        grid-template-rows: auto auto; /* Two rows */
+        grid-gap: 0; /* No gap */
+    }
+
+    section {
+        grid-area: 1 / 1; /* First row */
+        margin: 0 2.5%; /* Left and right margins */
+        padding: 0; /* Remove right padding */
+    }
+
+    aside {
+        grid-area: 2 / 1; /* Second row */
+        padding: 2.5%; /* Left and right padding */
+        margin: 0; /* Optional: Reset margin */
+    }
 }
