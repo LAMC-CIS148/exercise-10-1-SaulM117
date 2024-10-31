@@ -15,7 +15,7 @@ body {
         "footer";
     grid-template-rows: auto auto auto auto;
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px; /* Increased max-width */
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -27,7 +27,7 @@ a:focus, a:hover {
 /* the styles for the header */
 .header {
     grid-area: header;
-    padding: 80px 0; /* Adjusted for image height */
+    padding: 100px 0; /* More space above/below header */
     border-bottom: 3px solid #931420;
     background-image: linear-gradient(
         30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
@@ -78,9 +78,11 @@ a:focus, a:hover {
     display: grid;
     grid-template-columns: 30% 1fr;
     grid-column-gap: 2.5%;
+    padding: 2em; /* Added padding for more spacing */
 }
 .section {
     padding: 0 2.5% 20px 0; /* Right padding adjusted */
+    margin: 0 5%; /* Added margin for more spacing */
 }
 .section h1 {
     font-size: 150%;
@@ -132,6 +134,7 @@ article img {
 .aside {
     grid-column: 1; /* First column */
     padding-left: 2.5%; /* Based on width */
+    margin: 0 5%; /* More margin for spacing */
 }
 .aside h2 {
     color: #800000;
@@ -149,12 +152,12 @@ article img {
 /* the styles for the footer */
 .footer {
     grid-area: footer;
+    padding: 1em 0; /* Padding for footer */
     background-color: #931420;
 }
 .footer p {
     text-align: center;
     color: white;
-    padding: 1em 0;
 }
 
 /* Responsive styles */
