@@ -79,13 +79,23 @@ header img {
     color: yellow;
 }
 
-/* the styles for the section */
+/* the styles for the main element */
 main {
     grid-area: main; /* Define grid area */
+    display: grid; /* Set display to grid */
+    grid-template-columns: 30% 1fr; /* First column 30%, second column takes remaining space */
+    column-gap: 2.5%; /* Set a gap between the columns */
 }
 section {
-    padding: 0 2.5% 20px 2.5%;
+    grid-area: section; /* Define grid area for section */
+    padding: 0 2.5% 20px 0; /* Adjust padding as needed */
 }
+aside {
+    grid-area: aside; /* Define grid area for aside */
+    padding: 0 0 20px 2.5%; /* Adjust padding as needed */
+}
+
+/* the styles for the section */
 section h1 {
     font-size: 150%;
     padding: .5em 0 .25em 0;
@@ -133,9 +143,6 @@ article img {
 }
 
 /* the styles for the aside */
-aside {
-    padding: 0 0 20px 2.5%;
-}
 aside h2 {
     color: #800000;
     font-size: 130%;
