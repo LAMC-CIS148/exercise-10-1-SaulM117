@@ -1,73 +1,60 @@
 /* the styles for the elements */
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html {
-    background-color: white;
+	background-color: white;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 98%;
+    width: 98%;                     /* changed from 800 pixels */
     max-width: 960px;
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
-    
-    display: grid; /* Set display to grid */
-    grid-template-rows: auto auto 1fr auto; /* Four rows: auto height for header, nav, and footer; 1fr for main */
-    grid-template-columns: 1fr; /* One column that takes full width */
-    gap: 0; /* No gaps */
 }
 a:focus, a:hover {
-    font-style: italic;
+	font-style: italic;
 }
-
 /* the styles for the header */
 header {
-    padding: 80px 0; /* Set top and bottom padding to 80 pixels */
-    border-bottom: 3px solid #931420;
-    background-image: linear-gradient(
-        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-    grid-area: header; /* Define grid area */
-    display: grid; /* Set display to grid */
-    grid-template-rows: auto; /* Single row for header content */
-    gap: 0.5em; /* Grid gap */
+	padding: 1.5em 0 2em 0;
+	border-bottom: 3px solid #931420;
+		background-image: -moz-linear-gradient(
+	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+	background-image: -webkit-linear-gradient(
+	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+	background-image: -o-linear-gradient(
+	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+	background-image: linear-gradient(
+	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 }
 header h2 {
-    font-size: 175%;
-    color: #800000;
+	font-size: 175%;
+	color: #800000;
 }
 header h3 {
-    font-size: 130%;
-    font-style: italic;
+	font-size: 130%;
+	font-style: italic;
 }
 header img {
-    float: left;
-    padding: 0 3.75%;
+	float: left;
+	padding: 0 3.75%;
 }
 .shadow {
-    text-shadow: 2px 2px 2px #800000;
+	text-shadow: 2px 2px 2px #800000;
 }
-
 /* the styles for the navigation menu */
-#nav_menu {
-    grid-area: nav; /* Define grid area */
-}
 #nav_menu ul {
-    display: grid; /* Set display to grid */
-    grid-template-columns: repeat(5, 1fr); /* Five columns, each taking 1/5 of the width */
-    align-items: center; /* Center the items vertically */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-#nav_menu ul li {
-    text-align: center; /* Center text within each li */
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 #nav_menu ul li a {
     display: block;
+    text-align: center;
     padding: 1em 0;
     text-decoration: none;
     background-color: #800000;
@@ -75,147 +62,128 @@ header img {
     font-weight: bold;
 }
 #nav_menu a.current {
-    color: yellow;
-}
-
-/* the styles for the main element */
-main {
-    grid-area: main; /* Define grid area */
-    display: grid; /* Set display to grid */
-    grid-template-columns: 30% 1fr; /* First column 30%, second column takes remaining space */
-    column-gap: 2.5%; /* Set a gap between the columns */
-}
-
-section {
-    grid-area: section; /* Define grid area for section */
-    padding: 0 15px 20px 0; /* Set right padding to 15px, left padding to 0 */
-}
-aside {
-    grid-area: aside; /* Define grid area for aside */
-    padding: 0 0 20px 15px; /* Set left padding to 15px, maintain bottom padding */
+	color: yellow;
 }
 
 /* the styles for the section */
+section {
+    padding: 0 2.5% 20px 2.5%;
+}
 section h1 {
-    font-size: 150%;
-    padding: .5em 0 .25em 0;
-    margin: 0;
+	font-size: 150%;
+	padding: .5em 0 .25em 0;
+	margin: 0;
 }
 section h2 {
-    color: #800000;
-    font-size: 130%;
-    padding: .5em 0 .25em 0;
+	color: #800000;
+	font-size: 130%;
+	padding: .5em 0 .25em 0;
 }
 section p {
-    padding-bottom: .5em;
+	padding-bottom: .5em;
 }
 section blockquote {
-    padding: 0 2em;
-    font-style: italic;
+	padding: 0 2em;
+	font-style: italic;
 }
 section ul {
-    padding: 0 0 .25em 1.25em;
-    list-style-type: circle;
+	padding: 0 0 .25em 1.25em;
+	list-style-type: circle;
 }
 section li {
-    padding-bottom: .35em;
+	padding-bottom: .35em;
 }
 
 /* the styles for the article */
 article {
-    padding: .5em 0;
-    border-top: 2px solid #800000;
-    border-bottom: 2px solid #800000;
+	padding: .5em 0;
+	border-top: 2px solid #800000;
+	border-bottom: 2px solid #800000;
 }
 article h2 {
-    padding-top: 0;
+	padding-top: 0;
 }
 article h3 {
-    font-size: 105%;
-    padding-bottom: .25em;
+	font-size: 105%;
+	padding-bottom: .25em;
 }
 article img {
-    float: right;
-    max-width: 40%;
-    min-width: 150px;
-    margin: .5em 0 1em 1em;
-    border: 1px solid black;
+	float: right;
+	max-width: 40%;
+	min-width: 150px;
+	margin: .5em 0 1em 1em;
+	border: 1px solid black;
 }
 
 /* the styles for the aside */
+aside {
+    padding: 0 0 20px 2.5%;
+}
 aside h2 {
-    color: #800000;
-    font-size: 130%;
-    padding: .5em 0 .25em 0;
+	color: #800000;
+	font-size: 130%;
+	padding: .5em 0 .25em 0;
 }
 aside h3 {
-    font-size: 105%;
-    padding-bottom: .25em;
+	font-size: 105%;
+	padding-bottom: .25em;
 }
 aside img {
-    padding-bottom: 1em;
+	padding-bottom: 1em;
 }
 
 /* the styles for the footer */
 footer {
-    background-color: #931420;
-    grid-area: footer; /* Define grid area */
+	background-color: #931420;
 }
 footer p {
-    text-align: center;
-    color: white;
-    padding: 1em 0;
+	text-align: center;
+	color: white;
+	padding: 1em 0;
 }
 #mobile_menu {
-    display: none;
+	display: none;
 }
 
 @media only screen and (max-width: 734px) {
-    section h1 {
-        font-size: 125%;
-    }
-    section h2, aside h2 {
-        font-size: 110%;
-    }
-    aside h3 a {
-        font-size: 85%;
-    }
+	section h1 {
+		font-size: 125%
+	}
+	section h2, aside h2 {
+		font-size: 110%;
+	}
+	aside h3 a {
+		font-size: 85%;
+	}
 }
 
 @media only screen and (max-width: 648px) {
-    header {
-        display: grid; /* Set display to grid */
-        grid-template-rows: auto auto auto; /* Three rows */
-        gap: 0.5em; /* Grid gap of .5em */
-        padding: 20px 0; /* Adjust padding above and below based on new height */
-    }
-    
-    header img {
-        justify-self: center; /* Center the logo in the grid */
-    }
-    
-    #nav_menu {
-        display: none; /* Hide desktop nav */
-    }
-    
-    #mobile_menu {
-        display: block; /* Show mobile menu */
-        grid-area: nav; /* Place mobile menu in the navigation grid area */
-    }
+	header img { float: none; }
+	header { text-align: center; }
+	section {
+		float: none;
+		width: 95%;
+	}
+	aside {
+		float: none;
+		padding-right: 2.5%;
+		width: 95%;
+	}
+	article img { max-width: 30%; }
+	#speakers {
+		column-count: 2;
+	}
+	#nav_menu {
+		display: none;
+	}
+	#mobile_menu {
+		display: block;
+	}
+	.slicknav_menu {
+		background-color: #800000 !important;
+	}
+}
 
-    main {
-        grid-template-rows: auto auto; /* Two rows, sized automatically */
-        grid-template-columns: 1fr; /* One column */
-    }
-
-    section {
-        grid-area: 1 / 1 / 2 / 2; /* Place section in the first row */
-        margin: 0 2.5%; /* Adjust left and right margins */
-        padding: 0 2.5%; /* Set left and right padding to 2.5% */
-    }
-    
-    aside {
-        grid-area: 2 / 1 / 3 / 2; /* Place aside in the second row */
-        padding: 0 2.5%; /* Set left and right padding to 2.5% */
-    }
+@media only screen and (max-width: 414px) {
+	body { font-size: 90%; }
 }
