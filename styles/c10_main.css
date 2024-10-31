@@ -1,4 +1,11 @@
-/* Set the body to use grid layout */
+/* the styles for the elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: white;
+}
 body {
     display: grid;
     grid-template-rows: auto auto 1fr auto; /* Four rows: header, nav, main, footer */
@@ -23,21 +30,19 @@ header {
 }
 
 main {
-    grid-area: main;
+    display: grid;
+    grid-template-columns: 30% 1fr; /* First column 30%, second column remaining */
+    column-gap: 2.5%; /* Gap between columns */
+    grid-template-areas: 
+        "content aside"; /* Define grid areas */
 }
 
-footer {
-    grid-area: footer;
+section {
+    grid-area: content; /* Assign area for the section */
 }
 
-/* Other styles remain unchanged */
-/* the styles for the elements */
-* {
-    margin: 0;
-    padding: 0;
-}
-a:focus, a:hover {
-    font-style: italic;
+aside {
+    grid-area: aside; /* Assign area for the aside */
 }
 
 /* the styles for the header */
