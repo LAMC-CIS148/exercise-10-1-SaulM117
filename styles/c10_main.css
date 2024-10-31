@@ -163,29 +163,48 @@ footer p {
 }
 
 @media only screen and (max-width: 648px) {
-    header img { float: none; }
-    header { text-align: center; }
-    section {
-        float: none;
-        width: 95%;
+    /* Adjust header to a grid layout */
+    header {
+        display: grid;
+        grid-template-rows: auto auto auto; /* Three rows */
+        grid-template-columns: 1fr; /* One column */
+        gap: 0.5em; /* Grid gap */
+        padding: 0; /* Reset padding */
+        height: auto; /* Allow auto height */
     }
-    aside {
-        float: none;
-        padding-right: 2.5%;
-        width: 95%;
+    
+    /* Adjust padding based on grid height */
+    header {
+        padding: 40px 0; /* Set padding based on the height of the grid area */
     }
-    article img { max-width: 30%; }
-    #speakers {
-        column-count: 2;
-    }
+
     #nav_menu {
-        display: none;
+        display: none; /* Hide the original nav menu */
     }
     #mobile_menu {
-        display: block;
+        display: block; /* Show mobile menu in the grid area */
+        grid-area: nav; /* Assign to nav area */
     }
-    .slicknav_menu {
-        background-color: #800000 !important;
+
+    main {
+        display: grid;
+        grid-template-rows: auto auto; /* Two rows sized automatically */
+        grid-template-columns: 1fr; /* One column */
+        gap: 0; /* No gaps */
+        grid-template-areas: 
+            "content" 
+            "aside"; /* Redefine areas for section and aside */
+    }
+
+    section {
+        grid-area: content; /* Assign section to content area */
+        margin: 0 2.5%; /* Set left and right margins */
+        padding: 0 0 20px 0; /* Remove right padding */
+    }
+
+    aside {
+        grid-area: aside; /* Assign aside to aside area */
+        padding: 20px 2.5%; /* Set left and right padding */
     }
 }
 
