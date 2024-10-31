@@ -92,17 +92,20 @@ header img {
 main {
     grid-area: main;
     display: grid; /* Use grid layout */
-    grid-template-columns: 30% 1fr; /* First column: 30%, Second column: remaining space */
-    grid-template-rows: auto; /* One row sized automatically */
-    column-gap: 2.5%; /* Column gap of 2.5% */
+    grid-template-columns: 1fr; /* Full width */
+    grid-template-rows: auto auto; /* Two rows sized automatically */
 }
 
 section {
     grid-column: 1; /* Place section in the first column */
+    grid-row: 1; /* Place section in the first row */
+    margin: 0 2.5%; /* Left and right margins */
 }
 
 aside {
-    grid-column: 2; /* Place aside in the second column */
+    grid-column: 1; /* Place aside in the first column */
+    grid-row: 2; /* Place aside in the second row */
+    padding: 0 2.5%; /* Left and right padding */
 }
 
 /* Section styles */
@@ -162,7 +165,7 @@ article img {
 
 /* Aside styles */
 aside {
-    padding: 0 0 20px 2.5%;
+    padding: 0 0 20px; /* Padding below */
 }
 
 aside h2 {
@@ -210,35 +213,40 @@ footer p {
 }
 
 @media only screen and (max-width: 648px) {
-    header img {
-        float: none;
-    }
     header {
-        text-align: center;
+        display: grid; /* Use grid layout */
+        grid-template-rows: repeat(3, auto); /* Three rows sized automatically */
+        grid-template-columns: 1fr; /* One column */
+        grid-gap: 0.5em; /* Grid gap of 0.5em */
+        padding: 1em 0; /* Adjust padding for header */
     }
-    main {
-        float: none;
-        width: 95%;
+
+    header img {
+        float: none; /* Remove float */
+        justify-self: center; /* Center the logo */
     }
-    aside {
-        float: none;
-        padding-right: 2.5%;
-        width: 95%;
-    }
-    article img {
-        max-width: 30%;
-    }
-    #speakers {
-        column-count: 2;
-    }
+
     #nav_menu {
-        display: none;
+        display: none; /* Hide desktop menu */
     }
+
     #mobile_menu {
-        display: block;
+        display: block; /* Show mobile menu */
     }
-    .slicknav_menu {
-        background-color: #800000 !important;
+
+    main {
+        grid-template-rows: auto auto; /* Two rows sized automatically */
+    }
+
+    section {
+        grid-row: 1; /* Place section in the first row */
+        margin: 0 2.5%; /* Adjust margins */
+        padding-right: 0; /* Remove right padding */
+    }
+
+    aside {
+        grid-row: 2; /* Place aside in the second row */
+        padding: 0 2.5%; /* Adjust left and right padding */
     }
 }
 
