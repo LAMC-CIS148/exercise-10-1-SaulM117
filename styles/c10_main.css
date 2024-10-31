@@ -57,13 +57,18 @@ header img {
     grid-area: nav; /* Define grid area */
 }
 #nav_menu ul {
+    display: grid; /* Set display to grid */
+    grid-template-columns: repeat(5, 1fr); /* Five columns, each taking 1/5 of the width */
+    align-items: center; /* Center the items vertically */
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+#nav_menu ul li {
+    text-align: center; /* Center text within each li */
+}
 #nav_menu ul li a {
     display: block;
-    text-align: center;
     padding: 1em 0;
     text-decoration: none;
     background-color: #800000;
@@ -160,7 +165,7 @@ footer p {
 
 @media only screen and (max-width: 734px) {
     section h1 {
-        font-size: 125%
+        font-size: 125%;
     }
     section h2, aside h2 {
         font-size: 110%;
