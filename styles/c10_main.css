@@ -25,7 +25,7 @@ a:focus, a:hover {
 }
 /* the styles for the header */
 header {
-    padding: 1.5em 0 2em 0;
+    padding: 80px 0; /* Set top and bottom padding to 80 pixels */
     border-bottom: 3px solid #931420;
     background-image: -moz-linear-gradient(
         30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
@@ -86,13 +86,14 @@ main {
     grid-template-columns: 30% 1fr; /* First column 30%, second column takes remaining space */
     column-gap: 2.5%; /* Set a gap between the columns */
 }
+
 section {
     grid-area: section; /* Define grid area for section */
-    padding: 0 2.5% 20px 0; /* Adjust padding as needed */
+    padding: 0 15px 20px 0; /* Set right padding to 15px, left padding to 0 */
 }
 aside {
     grid-area: aside; /* Define grid area for aside */
-    padding: 0 0 20px 2.5%; /* Adjust padding as needed */
+    padding: 0 0 20px 15px; /* Set left padding to 15px, maintain bottom padding */
 }
 
 /* the styles for the section */
